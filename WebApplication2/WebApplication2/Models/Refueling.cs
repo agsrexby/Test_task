@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace WebApplication2.Models;
 
 public class Refueling
@@ -11,9 +13,13 @@ public class Refueling
     public int FuelAmount { get; set; }
     public int CarId { get; set; }
 
+    [JsonIgnore]
     public Car? Car { get; set; }
+    
+    [JsonIgnore]
     public List<InfoOfDocInCar> Documents { get; set; }
      
+    [JsonIgnore]
     public List<Photo> Photos { get; set; }
 
 }
